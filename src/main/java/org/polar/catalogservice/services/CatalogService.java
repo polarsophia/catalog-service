@@ -1,4 +1,4 @@
-package org.spring.catalogservice.services;
+package org.polar.catalogservice.services;
 
 import org.springframework.stereotype.Service;
 
