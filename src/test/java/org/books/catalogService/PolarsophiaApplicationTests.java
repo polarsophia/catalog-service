@@ -51,7 +51,7 @@ class BookControllerIntegrationTest{
 	@MockitoBean
 	private BookService bookService;
 
-	@Test
+    @Test
 	void whenGetBookNotExistsThenReturn404() throws Exception {
 		String isbn = "ISBN-09";
 		Mockito.when(bookService.viewBookDetails(isbn)).thenThrow(BookNotFoundException.class);
