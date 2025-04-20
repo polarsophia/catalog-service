@@ -1,6 +1,4 @@
-package org.polar.catalogservice.domain;
-
-import org.springframework.stereotype.Repository;
+package org.books.catalogService.domain;
 
 import java.util.Optional;
 

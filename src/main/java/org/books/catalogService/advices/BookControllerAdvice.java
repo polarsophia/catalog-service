@@ -1,7 +1,7 @@
-package org.polar.catalogservice.advices;
+package org.books.catalogService.advices;
 
-import org.polar.catalogservice.exceptions.BookAlreadyExistsException;
-import org.polar.catalogservice.exceptions.BookNotFoundException;
+import org.books.catalogService.exceptions.BookAlreadyExistsException;
+import org.books.catalogService.exceptions.BookNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

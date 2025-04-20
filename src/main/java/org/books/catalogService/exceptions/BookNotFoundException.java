@@ -1,4 +1,4 @@
-package org.polar.catalogservice.exceptions;
+package org.books.catalogService.exceptions;
 
 public class BookNotFoundException extends RuntimeException {
     public BookNotFoundException(String isbn) {

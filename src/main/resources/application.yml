@@ -1,6 +1,19 @@
 spring:
   application:
-    name: Polarsophia
+    name: catalog-service
+  config:
+    import: configserver:http://localhost:8888
+  cloud:
+    config:
+      uri: http://localhost:8888
+      request-connect-timeout: 5000
+      request-read-timeout: 5000
+      fail-fast: true
+      retry:
+        initial-interval: 1000
+        max-attempts: 3
+        max-interval: 5000
+        multiplier: 1.5
 
 server:
   port: 8080
@@ -10,3 +23,6 @@ server:
     threads:
       max: 100
       min-spare: 5
+
+catalog:
+  greeting: Hello from local Catalog Service!

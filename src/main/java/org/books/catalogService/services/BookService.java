@@ -1,9 +1,9 @@
-package org.polar.catalogservice.services;
+package org.books.catalogService.services;
 
-import org.polar.catalogservice.domain.Book;
-import org.polar.catalogservice.domain.BookRepository;
-import org.polar.catalogservice.exceptions.BookAlreadyExistsException;
-import org.polar.catalogservice.exceptions.BookNotFoundException;
+import org.books.catalogService.domain.Book;
+import org.books.catalogService.domain.BookRepository;
+import org.books.catalogService.exceptions.BookAlreadyExistsException;
+import org.books.catalogService.exceptions.BookNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service

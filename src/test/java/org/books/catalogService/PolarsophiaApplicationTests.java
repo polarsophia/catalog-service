@@ -1,12 +1,11 @@
-package org.polar.catalogservice;
+package org.books.catalogService;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.polar.catalogservice.controllers.BookController;
-import org.polar.catalogservice.domain.Book;
-import org.polar.catalogservice.exceptions.BookNotFoundException;
-import org.polar.catalogservice.services.BookService;
+import org.books.catalogService.controllers.BookController;
+import org.books.catalogService.domain.Book;
+import org.books.catalogService.exceptions.BookNotFoundException;
+import org.books.catalogService.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

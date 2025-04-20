@@ -1,8 +1,8 @@
-package org.polar.catalogservice.controllers;
+package org.books.catalogService.controllers;
 
 import jakarta.validation.Valid;
-import org.polar.catalogservice.domain.Book;
-import org.polar.catalogservice.services.BookService;
+import org.books.catalogService.domain.Book;
+import org.books.catalogService.services.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
