@@ -15,6 +15,18 @@ spring:
 #        max-interval: 5000
 #        multiplier: 1.5
 
+  datasource:
+    username: acdevs
+    password: 4444
+    url: jdbc:postgresql://localhost:5432/catalog
+    hikari:
+      connection-timeout: 2000
+      maximum-pool-size: 5
+
+  sql:
+    init:
+      mode: always
+
 server:
   port: 8080
   tomcat:

@@ -36,10 +36,14 @@ public class BookService {
     public Book editBookFromCatalog(String isbn, Book book){
         return bookRepository.findByIsbn(isbn)
                 .map(existingBook -> bookRepository.save(new Book(
+                        existingBook.id(),
+                        existingBook.version(),
                         existingBook.isbn(),
                         book.title(),
                         book.author(),
-                        book.price()))
+                        book.price(),
+                        existingBook.createdAt(),
+                        book.updatedAt()))
                 ).orElseThrow(() -> new BookNotFoundException(isbn));
     }
 }

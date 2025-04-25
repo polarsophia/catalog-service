@@ -18,9 +18,7 @@ public class TestDataLoader {
 
     @EventListener(ApplicationReadyEvent.class)
     public void loadTestData() {
-        bookRepository.save(new Book("ISBN-978", "The Great Gatsby", "F. Scott Fitzgerald", 10.99));
-        bookRepository.save(new Book("ISBN-909", "To Kill a Mockingbird", "Harper Lee", 12.99));
-        bookRepository.save(new Book("ISBN-356", "1984", "George Orwell", 15.99));
-        bookRepository.save(new Book("ISBN-284", "Pride and Prejudice", "Jane Austen", 8.99));
+        bookRepository.save(Book.of("ISBN-978", "The Great Gatsby", "F. Scott Fitzgerald", 10.99));
+        bookRepository.save(Book.of("ISBN-973", "To Kill a Mockingbird", "Harper Lee", 12.99));
     }
 }
