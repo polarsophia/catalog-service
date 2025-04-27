@@ -3,7 +3,7 @@ on: push
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: acdevz/catalog-service
+  IMAGE_NAME: orgs/polarsophia/catalog-service
   VERSION: latest
 
 jobs:
