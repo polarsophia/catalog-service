@@ -38,8 +38,19 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-bootRun{
-	systemProperty 'spring.profiles.active', 'testData'
+bootBuildImage {
+	imageName = 'catalog-service'
+	environment = [
+			'BP_JVM_VERSION': '24.*',
+	]
+
+	docker{
+		publishRegistry{
+			url = project.findProperty('registryUrl')
+			username = project.findProperty('registryUsername')
+			password = project.findProperty('registryToken')
+		}
+	}
 }
 
 dependencyManagement {

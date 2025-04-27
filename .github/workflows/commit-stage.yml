@@ -1,5 +1,11 @@
 name: Commit Stage
 on: push
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: acdevz/catalog-service
+  VERSION: latest
+
 jobs:
   build:
     name: Build and Test
@@ -30,9 +36,29 @@ jobs:
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
       - name: Build, unit tests and integration tests
-        run: | 
+        run: |
           chmod +x gradlew 
           ./gradlew build
 
-
-
+  package:
+    name: Package and Publish
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: [ build ]
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
+      security-events: write
+    steps:
+      - name: Checkout source-code
+        uses: actions/checkout@v3
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 24
+          cache: gradle
+      - name: build and publish
+        run: |
+          chmod +x gradlew 
+          ./gradlew bootBuildImage --imageName $REGISTRY/$IMAGE_NAME:$VERSION
