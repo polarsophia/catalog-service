@@ -3,12 +3,14 @@ package org.books.catalogService.demo;
 import org.books.catalogService.domain.Book;
 import org.books.catalogService.domain.BookRepository;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
 @Profile("testData")
+@Lazy
 public class TestDataLoader {
     private final BookRepository bookRepository;
 

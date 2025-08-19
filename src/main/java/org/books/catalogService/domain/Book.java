@@ -39,6 +39,6 @@ public record Book(
         Instant updatedAt
 ) {
         public static Book of(String isbn, String title, String author, Double price) {
-                return new Book(null, 0L, isbn, title, author, price, null, null);
+                return new Book(null, null, isbn, title, author, price, null, null);
         }
 }
