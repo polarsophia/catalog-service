@@ -37,8 +37,7 @@ class JsonBookTest {
                 	"isbn" : "ISBN-09",
                 	"title" : "Cloud Native In Action",
                 	"author" : "Thomas Vitale",
-                	"price" : 699.0,
-                	"version" : 0
+                	"price" : 699.0
                 }
                 """;
         assertThat(json.parse(jsonContent))
