@@ -8,7 +8,7 @@ ext {
 	springCloudVersion = "2024.0.1"
 }
 
-group = 'org.polar'
+group = 'org.books'
 version = '0.0.1-SNAPSHOT'
 
 java {
