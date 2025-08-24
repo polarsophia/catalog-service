@@ -29,6 +29,11 @@ spring:
     init:
       mode: always
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/PolarBookshop
 server:
   port: 8080
   tomcat:
@@ -41,3 +46,8 @@ server:
 
 catalog:
   greeting: Hello from local Catalog Service!
+
+#logging:
+#  level:
+#    root: INFO
+#    org.springframework.web: DEBUG

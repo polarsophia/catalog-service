@@ -43,7 +43,10 @@ public class BookService {
                         book.author(),
                         book.price(),
                         existingBook.createdAt(),
-                        book.updatedAt()))
+                        book.updatedAt(),
+                        existingBook.createdBy(),
+                        book.updatedBy()
+                    ))
                 ).orElseThrow(() -> new BookNotFoundException(isbn));
     }
 }
