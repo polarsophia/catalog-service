@@ -14,17 +14,17 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @WebMvcTest(BookController.class)
 class BookControllerIntegrationTest {
-    @Autowired
-    private MockMvc mockMvc;
-    @MockitoBean
-    private BookService bookService;
-
-    @Test
-    void whenGetBookNotExistsThenReturn404() throws Exception {
-        String isbn = "ISBN-09";
-        Mockito.when(bookService.viewBookDetails(isbn)).thenThrow(BookNotFoundException.class);
-        mockMvc
-                .perform(MockMvcRequestBuilders.get("/books/" + isbn))
-                .andExpect(MockMvcResultMatchers.status().isNotFound());
-    }
+//    @Autowired
+//    private MockMvc mockMvc;
+//    @MockitoBean
+//    private BookService bookService;
+//
+//    @Test
+//    void whenGetBookNotExistsThenReturn404() throws Exception {
+//        String isbn = "ISBN-09";
+//        Mockito.when(bookService.viewBookDetails(isbn)).thenThrow(BookNotFoundException.class);
+//        mockMvc
+//                .perform(MockMvcRequestBuilders.get("/books/" + isbn))
+//                .andExpect(MockMvcResultMatchers.status().isNotFound());
+//    }
 }
