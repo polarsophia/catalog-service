@@ -5,6 +5,7 @@ spring:
     import: "optional:configserver:"
   cloud:
     config:
+      enabled: false
       uri: http://localhost:8888
       request-connect-timeout: 5000
       request-read-timeout: 5000
@@ -46,6 +47,35 @@ server:
 
 catalog:
   greeting: Hello from local Catalog Service!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, info, flyway, heapdump
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+      probes:
+        enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  opentelemetry:
+    resource-attributes:
+        service.name: ${spring.application.name}
+        service.namespace: acme
+        service.instance.id: ${spring.application.name}-${random.value}
+
+
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: true
+    os:
+      enabled: true
 
 #logging:
 #  level:
