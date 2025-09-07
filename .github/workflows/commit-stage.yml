@@ -50,7 +50,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: temurin
-          java-version: 23
+          java-version: 24
           cache: gradle
       - name: build and publish
         run: |
